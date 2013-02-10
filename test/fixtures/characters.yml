@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  letter: MyString
+  count: 1
+  datafile: 
+
+two:
+  letter: MyString
+  count: 1
+  datafile: 

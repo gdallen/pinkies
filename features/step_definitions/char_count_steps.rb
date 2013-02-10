@@ -20,7 +20,6 @@ Then /^I should find$/ do |table|
   table.hashes.map do |hash|
     letter = hash["letter"]
     if letter =~ /:/
-  puts "#######found a symbol"
       letter = letter[1..-1].to_sym
     end
     expected_count = hash["count"]

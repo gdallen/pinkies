@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Letter:</b>
+  <%= @character.letter %>
+</p>
+
+<p>
+  <b>Count:</b>
+  <%= @character.count %>
+</p>
+
+<p>
+  <b>Datafile:</b>
+  <%= @character.datafile %>
+</p>
+
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

@@ -6,6 +6,10 @@ class Char_Counter
     @total_characters = 0
   end
 
+  def charmap 
+    @charmap
+  end
+
   def count_characters l
     l.each_char do |char|
       label = get_label char
