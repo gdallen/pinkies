@@ -32,7 +32,15 @@ class Char_Counter
     if c == " "
       :space
     else
-      c
+      if c == "\n"
+        :enter
+      else
+        if c == "\t"
+          :tab
+        else
+          c
+        end
+      end
     end
   end
 end

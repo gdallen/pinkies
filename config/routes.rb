@@ -1,11 +1,23 @@
 Chars::Application.routes.draw do
+  resources :shiftmaps
+
+
+  get "charactercounts/index"
+
+  resources :keystrokes
+
+
+  resources :charmaps
+
+
   resources :characters
 
 
-  resources :datafiles
 
 
-  resources :projects
+  resources :projects do
+    resources :datafiles
+  end
 
 
   # The priority is based upon order of creation:

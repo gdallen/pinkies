@@ -17,6 +17,10 @@ class Filename_Parser
       @exts << "txt"
       @exts << "java"
       @exts << "xml"
+      @exts << "clj"
+      @exts << "cljs"
+      @exts << "html"
+      @exts << "vm"
     end
     @exts
   end

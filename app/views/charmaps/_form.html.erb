@@ -1,0 +1,25 @@
+<%= form_for(@charmap) do |f| %>
+  <% if @charmap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@charmap.errors.count, "error") %> prohibited this charmap from being saved:</h2>
+
+      <ul>
+      <% @charmap.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :letter %><br />
+    <%= f.text_field :letter %>
+  </div>
+  <div class="field">
+    <%= f.label :keystroke %><br />
+    <%= f.text_field :keystroke %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

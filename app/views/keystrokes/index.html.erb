@@ -1,0 +1,27 @@
+<h1>Listing keystrokes</h1>
+
+<table>
+  <tr>
+    <th>Keystroke</th>
+    <th>Name</th>
+    <th>Order</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @keystrokes.each do |keystroke| %>
+  <tr>
+    <td><%= keystroke.keystroke %></td>
+    <td><%= keystroke.name %></td>
+    <td><%= keystroke.order %></td>
+    <td><%= link_to 'Show', keystroke %></td>
+    <td><%= link_to 'Edit', edit_keystroke_path(keystroke) %></td>
+    <td><%= link_to 'Destroy', keystroke, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Keystroke', new_keystroke_path %>

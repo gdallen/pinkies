@@ -1,0 +1,2 @@
+module CharactercountsHelper
+end

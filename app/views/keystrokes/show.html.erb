@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Keystroke:</b>
+  <%= @keystroke.keystroke %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @keystroke.name %>
+</p>
+
+<p>
+  <b>Order:</b>
+  <%= @keystroke.order %>
+</p>
+
+
+<%= link_to 'Edit', edit_keystroke_path(@keystroke) %> |
+<%= link_to 'Back', keystrokes_path %>

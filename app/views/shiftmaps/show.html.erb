@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Letter:</b>
+  <%= @shiftmap.letter %>
+</p>
+
+<p>
+  <b>Keystroke:</b>
+  <%= @shiftmap.keystroke %>
+</p>
+
+
+<%= link_to 'Edit', edit_shiftmap_path(@shiftmap) %> |
+<%= link_to 'Back', shiftmaps_path %>

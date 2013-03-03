@@ -27,12 +27,17 @@ class Project_Loader
     ar_project.save
     p = Project.find_by_name @project_name
 
+    filename_parser = Filename_Parser.new
     @files.each do |f|
-      current_file = p.datafiles.create(:name => f)
+      if filename_parser.should_be_processed? f then
+        current_file = p.datafiles.create(:name => f, :status=> "processed")
 
-      character_counts = zr.counts f
-      character_counts.each_pair do |l, c|
-        current_file.characters.create(:letter => l, :count => c)
+        character_counts = zr.counts f
+        character_counts.each_pair do |l, c|
+          current_file.characters.create(:letter => l, :count => c)
+        end
+      else
+        current_file = p.datafiles.create(:name => f, :status => "skipped")
       end
     end
   end

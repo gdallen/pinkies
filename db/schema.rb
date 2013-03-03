@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205050258) do
+ActiveRecord::Schema.define(:version => 20130228041011) do
+
+  create_table "charactercounts", :id => false, :force => true do |t|
+    t.integer "id",        :limit => 8
+    t.string  "project"
+    t.string  "keystroke"
+    t.decimal "count",                  :precision => 32, :scale => 0
+  end
 
   create_table "characters", :force => true do |t|
     t.string   "letter"
@@ -23,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20130205050258) do
 
   add_index "characters", ["datafile_id"], :name => "index_characters_on_datafile_id"
 
+  create_table "charmaps", :force => true do |t|
+    t.string   "letter"
+    t.string   "keystroke"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "datafiles", :force => true do |t|
     t.string   "name"
     t.string   "status"
@@ -31,9 +45,31 @@ ActiveRecord::Schema.define(:version => 20130205050258) do
     t.integer  "project_id"
   end
 
+  create_table "keystrokes", :force => true do |t|
+    t.string   "keystroke"
+    t.string   "name"
+    t.integer  "order"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "archive"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "shiftcounts", :id => false, :force => true do |t|
+    t.integer "id",        :limit => 8
+    t.string  "project"
+    t.string  "keystroke"
+    t.decimal "count",                  :precision => 32, :scale => 0
+  end
+
+  create_table "shiftmaps", :force => true do |t|
+    t.string   "letter"
+    t.string   "keystroke"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

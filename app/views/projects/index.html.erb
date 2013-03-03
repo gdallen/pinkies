@@ -1,9 +1,48 @@
 <h1>Listing projects</h1>
 
+<% charactercounts = get_character_counts %>
+<% shiftcounts = get_shift_counts %>
+<script type="text/javascript" charset="utf-8">
+  $(function() {
+    new Highcharts.Chart({
+      chart: {
+        renderTo: "character_count_chart",
+        type: "column"
+      },
+      title: {
+        text: "character counts by finger"
+      },
+      xAxis: {
+        categories: [
+          <%= charactercounts.collect {|cc| "'" + cc[0] + "'" }.join(",").html_safe %>
+        ]
+      },
+      yAxis: {
+        title: {
+          text: "count"
+        }
+      },
+      series: [{
+        name: "count",
+        data: [
+          <%= charactercounts.collect {|cc| cc[1] }.join(",").html_safe %>
+           ]
+      } , {
+        name: "shiftcount", 
+        data: [
+          <%= shiftcounts.collect {|cc| cc[1] }.join(",").html_safe %>
+         ]
+      }]
+    });
+  });
+</script>
+
+<div id="character_count_chart" style="width:560px; height:300px;"></div>
 <table>
   <tr>
     <th>Name</th>
     <th>Archive</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,6 +55,8 @@
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
     <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+    <td><%= link_to 'Project Files', project_datafiles_path(project) %></td>
   </tr>
 <% end %>
 </table>

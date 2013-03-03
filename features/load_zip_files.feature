@@ -18,3 +18,4 @@ And the file "file1.txt" in project "feature test" should have character counts
   | character | count |
   | i         | 4     |
   | I         | 1     |
+  | enter     | 2     |

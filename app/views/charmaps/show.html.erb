@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Letter:</b>
+  <%= @charmap.letter %>
+</p>
+
+<p>
+  <b>Keystroke:</b>
+  <%= @charmap.keystroke %>
+</p>
+
+
+<%= link_to 'Edit', edit_charmap_path(@charmap) %> |
+<%= link_to 'Back', charmaps_path %>

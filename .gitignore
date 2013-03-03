@@ -13,3 +13,13 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore all vim swap files
+*.swp
+
+# Ignore all zip files that are being used as input
+/zips/*
+
+# Ignore the highcharts zip file which doesn't belong here
+Highcharts-2.3.5.zip
+

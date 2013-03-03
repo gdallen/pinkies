@@ -1,0 +1,25 @@
+<%= form_for(@shiftmap) do |f| %>
+  <% if @shiftmap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shiftmap.errors.count, "error") %> prohibited this shiftmap from being saved:</h2>
+
+      <ul>
+      <% @shiftmap.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :letter %><br />
+    <%= f.text_field :letter %>
+  </div>
+  <div class="field">
+    <%= f.label :keystroke %><br />
+    <%= f.text_field :keystroke %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

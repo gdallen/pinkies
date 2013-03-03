@@ -40,3 +40,15 @@ Scenario: two lines
   | l      |  1    |
   | i      |  1    |
   | 2      |  1    |
+
+Scenario: tabs and newlines
+  Given a text line "test one\n"
+  And a second text line "line 2	with tab"
+  When I count the line of text
+  And I count the second line of text
+  Then I should find
+  | letter | count |
+  | :tab   |  1    |
+#  | :enter |  1    |
+  | :space |  3    |
+

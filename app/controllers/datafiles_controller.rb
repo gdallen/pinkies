@@ -2,7 +2,9 @@ class DatafilesController < ApplicationController
   # GET /datafiles
   # GET /datafiles.json
   def index
-    @datafiles = Datafile.all
+    @project = Project.find(params[:project_id])
+    @datafiles = @project.datafiles.all
+#    @datafiles = Datafile.all
 
     respond_to do |format|
       format.html # index.html.erb

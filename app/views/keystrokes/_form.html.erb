@@ -1,0 +1,29 @@
+<%= form_for(@keystroke) do |f| %>
+  <% if @keystroke.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@keystroke.errors.count, "error") %> prohibited this keystroke from being saved:</h2>
+
+      <ul>
+      <% @keystroke.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :keystroke %><br />
+    <%= f.text_field :keystroke %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :order %><br />
+    <%= f.number_field :order %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
