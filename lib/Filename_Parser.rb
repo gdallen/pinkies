@@ -16,11 +16,16 @@ class Filename_Parser
       @exts = []
       @exts << "txt"
       @exts << "java"
+      @exts << "js"
       @exts << "xml"
       @exts << "clj"
       @exts << "cljs"
       @exts << "html"
+      @exts << "rb"
+      @exts << "rdoc"
       @exts << "vm"
+      @exts << "yml"
+      @exts << "gemspec"
     end
     @exts
   end
