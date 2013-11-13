@@ -1,15 +1,10 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
 development:
   adapter: mysql2
   encoding: utf8
-  database: charcount_development
+  database: your_database_name
   pool: 5
-  username: root
-  password: pwMysql
+  username: your_database_password
+  password: your_database_password
 #  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
